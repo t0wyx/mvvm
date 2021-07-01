@@ -37,7 +37,7 @@ var vm = new MVVM({
 ```
 
 效果：
-![img1][img1]
+![img1](img/1.gif)
 
 
 ### 几种实现双向绑定的做法
@@ -75,7 +75,7 @@ var vm = new MVVM({
 4、mvvm入口函数，整合以上三者
 
 上述流程如图所示：
-![img2][img2]
+![img2](img/2.png)
 
 ### 1、实现Observer
 ok, 思路已经整理完毕，也已经比较明确相关逻辑和模块功能了，let's do it
@@ -172,7 +172,7 @@ Watcher.prototype = {
 
 ### 2、实现Compile
 compile主要做的事情是解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图，如图所示：
-![img3][img3]
+![img3](img/3.png)
 
 因为遍历解析的过程有多次操作dom节点，为提高性能和效率，会先将vue实例根节点的`el`转换成文档碎片`fragment`进行解析编译操作，解析完成，再将`fragment`添加回原来的真实dom节点中
 ```javascript
